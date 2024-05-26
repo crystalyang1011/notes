@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- 1.统一视口 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>媒体监听适配</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      list-style: none;
+    }
+    .header{
+      width: 100%;
+      height: 100px;
+      background-color: pink;
+    }
+    .header-c{
+      width: 1200px;
+      height: 100%;
+      background-color: yellow;
+      margin: 0 auto;
+    }
+    .header .header-c .nav{
+      /* 这里的宽度就由内容撑开即可 */
+      height: 100%;
+    }
+    .header .header-c .nav-item {
+      float: left;
+      width: 100px;
+      height: 100%;
+      text-align: center;
+      line-height: 100px;
+      cursor: pointer;
+    }
+    .header .header-c .nav-item:hover{
+      color: red;
+    }
+    /* css的媒体监听语法,监听屏幕宽度,如果最大宽度为750px(一般区分是否是移动端就按照750划分) */
+    @media screen and (max-width:750px){
+      /* body {
+        background-color: yellow;
+      } */
+      /* 对原来的html元素重新针对移动端做一个适配即可 */
+      .header {
+        height: 40px;
+      }
+      .header-c {
+        position: relative;
+        width: 100%;
+      }
+      .header .header-c .nav {
+        /* 根据定位将导航项往下移 */
+        position: absolute;
+        top: 40px;
+        left: 0;
+        /* 这里的宽度要设置为100%,因为我们待会要隐藏导航项目 */
+        width: 100%;
+        height: auto;
+      }
+      /* 此时需要独占一行,则不能浮动了 */
+      .header .header-c .nav-item{
+        float: none;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid gray;
+
+      }
+
+    }
+  </style>
+</head>
+<body>
+<!-- 媒体监听通过@media实现。注意！媒体监听不是等比例缩放，而是同一块内容在不同设备上有合理的表现。
+  比如在PC端一行能同时展示4个元素块，而在移动端一行只能展示1个或2个元素块
+  那么就可以通过监听媒体宽度，给元素设置不同的宽度，从而有合理的表现 -->
+  <!-- 头部 -->
+  <div class="header">
+    <!-- 头部版心 -->
+    <div class="header-c">
+      <!-- 导航 -->
+      <ul class="nav">
+        <li class="nav-item">首页</li>
+        <li class="nav-item">发现</li>
+        <li class="nav-item">分类</li>
+        <li class="nav-item">社区</li>
+        <li class="nav-item">我的</li>
+      </ul>
+    </div>
+  </div>
+  
+</body>
+</html>

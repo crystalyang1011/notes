@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 4.一般是设备宽度的1/10，但这个值是动态的，根据设备宽度动态计算，必须通过JS来实现。 -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- 1.统一视口 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Rem适配</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /* 3. box css*/
+   .box {
+      /* width: 375px;
+      height: 100px; */
+      /* 6.思考：如果设计稿是750px，而且当前设备宽度是也是750px，
+      要求该box的宽度为375px，得到html的font-size = 75px，那么在这里宽应为 5rem;
+      如果当前设备宽度是375px，那么要求的box的宽度就应该375px/2，得到html的font-size为37.5px，
+      此时设置的宽度仍然为5rem */
+      width: 5rem;
+      height: 5rem;
+      background-color: red;
+      /* 弊端：如果发现某个元素明显宽度不对，但是我们无法从rem的值来判断是否正确，
+      解决：一般会保留px源码，同时通过第三方工具动态监听转换比如gulp */
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 需求：移动端UI设计稿宽度750px，假设有一个元素宽度时375px，那么按照比例应该是当前元素在任何宽度的设备上都应该占有整体宽度的1/2 -->
+  <!-- 2.写一个box -->
+  <div class="box"></div>
+
+  <script>
+    // 5.根据设备宽度计算html的font-size
+    function resetHtmlFont(){
+      //获取html对象并动态设置font-size = 设备宽度/10
+      document.documentElement.style.fontSize = screen.width/10 + 'px';
+    }
+    resetHtmlFont()
+    //如果窗口大小变化了，则重新计算font-size
+    window.onresize = resetHtmlFont;
+  </script>
+</body>
+</html>
