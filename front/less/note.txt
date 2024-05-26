@@ -1,0 +1,46 @@
+Less
+1. 概念
+是一个CSS预处理器，Less文件后缀是.less。扩充了CSS语言，使CSS具备一定的逻辑性、计算能力
+注意：浏览器不识别Less代码，目前阶段，网页要引入对应的CSS文件
+插件： Easy Less， 保存less文件后自动生成对应的CSS文件
+
+2. 运算
+加减乘相同，
+但除法注意： (/) 更推荐 or ./     
+      (100/4px) or 100./4px
+注意：单位放最后，不要写多个单位，css以多个单位为准
+
+3.嵌套
+快速生成后代选择器,&表示当前选择器（配合伪类）
+.parent {
+  .children {
+
+    &:hover {
+
+    }
+    &:nth-children(1) {
+
+    }
+  }
+}
+
+4.变量
+变量存储数据，方便使用和修改
+定义：@变量名：数据
+使用：CSS属性：@变量名
+
+5.导入
+导入less公共样式文件
+（base 清楚默认样式， common 首位公共样式等）
+@import "文件路径"
+tip: 如果是less文件可以省略后缀（建议还是把后缀写上吧，有的时候不行）
+@import './base.less'
+@import './common'
+
+6.导出
+在less文件的第一行添加 //out: 存储URL
+提示：没有分号，文件夹名称后面添加/
+// out: ./index.css
+// out: ./css/
+禁止导出：// out:false
+比如 base.less -> common.less -> index.less 此时只需要导出index.less而不需要前两个less
