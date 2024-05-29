@@ -1,0 +1,32 @@
+Bootstrap:
+twitter，UI框架，提供了大量编写好的CSS样式
+
+栅格系统：
+栅格化是指将整个网页的宽度分成12等份，每个盒子占用的对应的份数
+如：一行排4个盒子，则每个盒子占3份即可（12/4=3）
+6个区间：
+extra small xm 手机
+small sm 
+medium md 电脑
+large lg
+extra large xl 超大屏
+extra extra large xxl 
+常用布局类
+row: 行
+col-**-**: col-xxl-3 在xxl区间的时候，让其每行有3列
+
+Button 类
+btn：清除了默认样式
+btn-success
+btn-warning
+...
+按钮尺寸：btn-lg/btn-sm
+<button class="btn btn-success">success</button>
+注意不能只写btn-success
+https://v5.bootcss.com/docs/components/buttons/
+
+组件（Components）
+1. 引入样式表
+2. 引入JS文件（optional）
+3. 复制结构，修改内容
+

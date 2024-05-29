@@ -1,0 +1,56 @@
+.bg-body-tertiary {
+  background-color: pink;
+}
+.bg-body-tertiary .navbar-collapse {
+  flex-grow: 0;
+}
+@media (max-width: 768px) {
+  .carousel .carousel-item {
+    height: 250px;
+  }
+}
+@media (min-width: 768px) {
+  .carousel .carousel-item {
+    height: 400px;
+  }
+}
+@media (min-width: 992px) {
+  .carousel .carousel-item {
+    height: 500px;
+  }
+}
+.carousel .carousel-item {
+  background-size: cover;
+  background-position: center 0;
+}
+.carousel .carousel-item:nth-child(1) {
+  background-image: url(../img_01.jpg);
+}
+.carousel .carousel-item:nth-child(2) {
+  background-image: url(../img_02.png);
+}
+.carousel .carousel-item:nth-child(3) {
+  background-image: url(../img_02.png);
+}
+.project {
+  margin-top: 50px;
+  text-align: center;
+}
+.project .cover {
+  height: 200px;
+  margin-bottom: 10px;
+}
+.project .cover a {
+  display: block;
+  height: 200px;
+  background-color: gray;
+}
+.project .cover:nth-child(2) a {
+  background-color: green;
+}
+.project .cover:nth-child(3) a {
+  background-color: red;
+}
+.project .cover:nth-child(4) a {
+  background-color: blue;
+}

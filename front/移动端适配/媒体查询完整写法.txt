@@ -1,0 +1,34 @@
+完整写法
+@media 关键词 媒体类型 and (媒体特性) {css代码}
+关键词/逻辑操作符
+and
+only
+not
+
+化简写法:
+@media (媒体特性) {
+	
+}
+@media (min-width:768px) {
+	
+}
+媒体类型是用来区分设备类型的，如屏幕设备，打印设备等，其中手机、电脑、平板都属于屏幕设备
+屏幕（可省略）         screen      带屏幕的设备
+打印浏览                  print         打印浏览模式
+阅读器                     speech      屏幕阅读模式
+不区分类型               all            所有
+
+媒体特性主要用来描述媒体类型的具体特性，如屏幕宽高，分辨率等
+视口的宽和高
+视口的最大宽和高  max-width
+视口的最小宽和高  min-width
+屏幕方向
+
+link
+<link rel="stylesheet" media="媒体特性" href="xx.css">
+<link rel="stylesheet" media="(max-width: 768px)" href="./pink.css">
+						这个括号不要忘记
+pink.css {
+	bgc:pink
+}
+我懂了，我可以把关于mobile的放到一个css里面，然后用media引入它
