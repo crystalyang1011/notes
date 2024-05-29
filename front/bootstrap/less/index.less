@@ -1,0 +1,70 @@
+// out: ../index.css
+// nav
+.bg-body-tertiary {
+  background-color: pink;
+  .navbar-collapse {
+    // flex-grow: 1 表示内容撑开，类似flex: 1;
+    flex-grow: 0;
+  }
+}
+// carousel: 小于768px图片高度250max; 大于等于768px图片高度400; 大于等于992px图片高度500
+.carousel {
+  @media (max-width: 768px) {
+    .carousel-item{
+      height: 250px;
+    }
+  }
+  @media (min-width: 768px) {
+    .carousel-item{
+      height: 400px;
+    }
+  }
+  @media (min-width: 992px) {
+    .carousel-item{
+      height: 500px;
+    }
+  }
+  .carousel-item{
+    background-size: cover;
+    background-position: center 0;
+    &:nth-child(1){
+      background-image: url(../img_01.jpg);
+    }
+    &:nth-child(2){
+      background-image: url(../img_02.png);
+    }
+    &:nth-child(3){
+      background-image: url(../img_02.png);
+    }
+  }
+}
+
+.project {
+  margin-top: 50px;
+  text-align: center;
+  .cover {
+    height: 200px;
+    margin-bottom: 10px;
+    a {
+      display: block;
+      height: 200px;
+      background-color: gray;
+    }
+
+    &:nth-child(2){
+      a{
+        background-color: green;
+      }
+    }
+    &:nth-child(3){
+      a{
+        background-color: red;
+      }
+    }
+    &:nth-child(4){
+      a{
+        background-color: blue;
+      }
+    }
+  }
+}
